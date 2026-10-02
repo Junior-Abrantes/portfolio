@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Junior Abrantes · Social media</title>
+<meta name="description" content="Junior Abrantes: estratégia, copy e métricas para redes sociais. Dois perfis do zero a 1 milhão de seguidores sem anúncio.">
+<meta property="og:title" content="Junior Abrantes · Social media">
+<meta property="og:description" content="Dois perfis do zero a 1 milhão de seguidores, 100% orgânico.">
+<meta property="og:image" content="https://portfolio.cattleyatech.shop/img/junior-abrantes.jpg">
+<link rel="icon" href="/img/logos/cattleya-mark-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: same monochrome system as the dev portfolio — light canvas, black rounded hero with photo,
+   label|content editorial grid, white cards. Content is organized like a social-media case. */
+:root{
+  --canvas:#f5f5f5;--card:#fff;--ink:#0a0a0a;--ink-2:rgba(10,10,10,.6);--ink-3:rgba(10,10,10,.38);--line:rgba(10,10,10,.09);
+  --night:#0a0a0a;--paper:#fff;--paper-2:rgba(255,255,255,.62);--paper-line:rgba(255,255,255,.12);--ok:#22c55e;
+  --display:"Inter Tight","Inter",ui-sans-serif,system-ui,sans-serif;--body:"Inter",ui-sans-serif,system-ui,sans-serif;
+  --r-lg:28px;--r:20px;--wrap:1280px;--ease:cubic-bezier(.22,1,.36,1);color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--canvas);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.05;letter-spacing:-.03em;font-weight:600;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:clamp(16px,3vw,40px)}
+.label{font-size:14px;font-weight:500}
+.cols{display:grid;grid-template-columns:minmax(160px,1fr) 3fr;gap:20px clamp(24px,4vw,64px)}
+.cols > *{min-width:0}
+@media (max-width:860px){.cols{grid-template-columns:1fr}}
+.h2{font-size:clamp(34px,5vw,64px)}
+section.sec{padding-block:clamp(64px,9vw,120px)}
+.muted{color:var(--ink-2)}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:8px}
+
+/* top bar */
+.top{position:absolute;left:0;right:0;top:12px;z-index:5}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;height:72px;padding-inline:clamp(28px,4vw,56px)}
+.logo{display:flex;align-items:center;gap:10px;color:var(--paper);text-decoration:none;font-family:var(--display);font-weight:600}
+.logo svg{width:38px}
+.btn{display:inline-flex;align-items:center;gap:10px;height:46px;padding:0 20px;border-radius:999px;font-weight:500;font-size:15px;text-decoration:none;border:0;cursor:pointer;transition:transform .4s var(--ease)}
+.btn:active{transform:scale(.96)}
+.btn.light{background:var(--paper);color:var(--ink)}
+.btn.dark{background:var(--ink);color:var(--paper)}
+.btn.ghost{box-shadow:inset 0 0 0 1px currentColor;color:inherit;background:transparent}
+.btn svg{width:15px;height:15px}
+
+/* hero */
+.hero{padding:12px}
+.hero-card{position:relative;border-radius:var(--r-lg);background:radial-gradient(120% 90% at 85% 40%,#1c1c1c 0%,#0d0d0d 55%,#0a0a0a 100%);color:var(--paper);overflow:hidden;min-height:clamp(560px,84vh,800px);display:grid;align-items:center}
+.hero-txt{position:relative;z-index:2;padding:120px clamp(20px,4vw,40px) 56px clamp(20px,8vw,120px);max-width:660px}
+.tag{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--paper-2);margin-bottom:24px}
+.tag i{width:7px;height:7px;border-radius:50%;background:var(--ok)}
+.hero h1{font-size:clamp(40px,5vw,72px);letter-spacing:-.045em}
+.hero .who{margin-top:20px;font-family:var(--display);font-size:clamp(18px,1.6vw,22px);font-weight:500}
+.hero .who span{color:var(--paper-2)}
+.hero .lede{margin-top:14px;color:var(--paper-2);max-width:46ch}
+.acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero-photo{position:absolute;right:0;top:0;bottom:0;width:56%;z-index:1}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:62% 18%;-webkit-mask-image:linear-gradient(90deg,transparent,#000 40%);mask-image:linear-gradient(90deg,transparent,#000 40%)}
+@media (max-width:900px){.hero-card{min-height:0;align-items:end}.hero-photo{position:relative;width:100%;height:min(105vw,440px);order:-1}.hero-photo img{-webkit-mask-image:linear-gradient(0deg,transparent,#000 45%);mask-image:linear-gradient(0deg,transparent,#000 45%)}.hero-txt{padding:0 20px 34px;margin-top:-90px}.hero h1{font-size:clamp(34px,10vw,46px)}}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:clamp(36px,5vw,56px)}
+.stat{background:var(--card);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;justify-content:space-between;gap:30px;min-height:190px}
+.stat b{font-family:var(--display);font-size:clamp(38px,4vw,56px);font-weight:600;letter-spacing:-.05em;line-height:1;font-variant-numeric:tabular-nums}
+.stat span{font-size:14.5px;color:var(--ink-2)}
+.stat.dark{background:var(--night);color:var(--paper)}.stat.dark span{color:var(--paper-2)}
+@media (max-width:900px){.stats{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.stats{grid-template-columns:1fr}.stat{min-height:150px}}
+.note{font-size:13.5px;color:var(--ink-3);margin-top:14px}
+
+/* how i work */
+.steps{counter-reset:s;margin-top:clamp(32px,4vw,52px);border-top:1px solid var(--line)}
+.step{display:grid;grid-template-columns:minmax(160px,1fr) 1.2fr 1.8fr;gap:14px clamp(24px,4vw,64px);padding:26px 0;border-bottom:1px solid var(--line)}
+.step > *{min-width:0}
+.step .n{font-size:14px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.step h3{font-size:clamp(20px,2vw,26px);letter-spacing:-.02em}
+.step p{color:var(--ink-2)}
+@media (max-width:860px){.step{grid-template-columns:1fr}}
+
+/* calendar sample */
+.band{background:var(--night);color:var(--paper)}
+.band .muted{color:var(--paper-2)}
+.cal-wrap{margin-top:clamp(32px,4vw,52px);overflow-x:auto;border-radius:var(--r)}
+.cal{display:grid;grid-template-columns:repeat(5,minmax(170px,1fr));gap:10px;min-width:880px}
+.day{background:rgba(255,255,255,.05);border:1px solid var(--paper-line);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.day .d{font-size:13px;color:var(--paper-2)}
+.day .fmt{align-self:flex-start;font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--paper);color:var(--ink)}
+.day .fmt.r{background:#fde68a}.day .fmt.c{background:#c7d2fe}
+.day b{font-family:var(--display);font-size:16px;font-weight:600;line-height:1.25}
+.day small{font-size:12.5px;color:var(--paper-2)}
+.pillars{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.pillars span{font-size:13px;padding:6px 12px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--paper-line)}
+.flag{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--paper-2);border:1px solid var(--paper-line);border-radius:999px;padding:4px 10px;margin-top:14px}
+
+/* copy before/after */
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:clamp(32px,4vw,52px)}
+.ba article{background:var(--card);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.ba .k{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.ba .post{font-size:16px;line-height:1.6;white-space:pre-line}
+.ba .why{font-size:14px;color:var(--ink-2);border-top:1px solid var(--line);padding-top:14px}
+.ba article.good{box-shadow:inset 0 0 0 2px var(--ink)}
+@media (max-width:760px){.ba{grid-template-columns:1fr}}
+
+/* metrics */
+.mgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:clamp(32px,4vw,52px)}
+.mgrid article{background:var(--card);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.mgrid h3{font-size:19px;letter-spacing:-.015em}
+.mgrid p{font-size:15px;color:var(--ink-2)}
+@media (max-width:860px){.mgrid{grid-template-columns:1fr}}
+
+/* experience */
+.xp{margin-top:clamp(32px,4vw,52px);border-top:1px solid var(--line)}
+.xp-row{display:grid;grid-template-columns:minmax(160px,1fr) 1.2fr 1.8fr;gap:12px clamp(24px,4vw,64px);padding:24px 0;border-bottom:1px solid var(--line)}
+.xp-row > *{min-width:0}
+.xp-row .yr{font-size:14px;color:var(--ink-2)}
+.xp-row h3{font-size:clamp(19px,1.8vw,24px);letter-spacing:-.02em}
+.xp-row .org{font-size:14px;color:var(--ink-2);margin-top:4px}
+.xp-row p{color:var(--ink-2);font-size:15px}
+@media (max-width:860px){.xp-row{grid-template-columns:1fr}}
+
+/* contact */
+.contact-wrap{padding:12px}
+.contact{background:var(--night);color:var(--paper);border-radius:var(--r-lg);padding:clamp(28px,5vw,64px) clamp(18px,3vw,40px)}
+.contact h2{font-size:clamp(34px,5.4vw,80px);letter-spacing:-.045em;max-width:15ch}
+.contact h2 .dim{color:var(--paper-2)}
+.clist{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:clamp(32px,4vw,52px)}
+.clist div{border-top:1px solid var(--paper-line);padding-top:16px;min-width:0}
+.clist small{display:block;font-size:13px;color:var(--paper-2)}
+.clist span,.clist a{font-family:var(--display);font-size:clamp(17px,1.6vw,21px);font-weight:500;text-decoration:none;overflow-wrap:anywhere}
+@media (max-width:760px){.clist{grid-template-columns:1fr}}
+.foot{margin-top:40px;font-size:14px;color:var(--paper-2);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+.foot a{text-decoration:none}.foot a:hover{color:var(--paper)}
+
+/* gentle reveal */
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}}
+.hero-txt > *{animation:fadeUp .9s var(--ease) both}
+.hero-txt > *:nth-child(2){animation-delay:.08s}.hero-txt > *:nth-child(3){animation-delay:.16s}.hero-txt > *:nth-child(4){animation-delay:.24s}.hero-txt > *:nth-child(5){animation-delay:.32s}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Portfólio de Junior Abrantes">
+      <svg viewBox="-70 -29 140 58" fill="none" aria-hidden="true"><ellipse cx="0" cy="0" rx="64" ry="17" stroke="currentColor" stroke-width="9"/><circle cx="0" cy="0" r="27" fill="currentColor"/><path d="M-64,0 A 64 17 0 0 0 64,0" stroke="currentColor" stroke-width="9" stroke-linecap="round"/></svg>
+    </a>
+    <a class="btn light" href="#contato">Falar comigo</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-card">
+    <div class="hero-txt">
+      <div class="tag"><i></i>Social media · disponível para começar</div>
+      <h1>Perfis que crescem sem depender de anúncio.</h1>
+      <p class="who">Junior Abrantes, <span>estratégia, copy e métricas</span></p>
+      <p class="lede">Levei dois perfis do zero a 1 milhão de seguidores cada, só com conteúdo orgânico. Hoje uno essa leitura de algoritmo com a análise de dados que aprendi trabalhando com mídia paga.</p>
+      <div class="acts">
+        <a class="btn light" href="#como-trabalho">Como eu trabalho</a>
+        <a class="btn ghost" href="/">Portfólio de desenvolvimento</a>
+      </div>
+    </div>
+    <div class="hero-photo"><img src="/img/junior-abrantes.jpg" alt="Junior Abrantes"></div>
+  </div>
+</section>
+
+<section class="sec" id="resultados" style="padding-top:clamp(48px,6vw,80px)">
+  <div class="wrap">
+    <div class="cols"><div class="label">Resultados</div><h2 class="h2">Crescimento orgânico, medido.</h2></div>
+    <div class="stats">
+      <div class="stat dark"><b>2 × 1 M</b><span>dois perfis levados do zero a 1 milhão de seguidores cada</span></div>
+      <div class="stat"><b>+5 M</b><span>visualizações orgânicas em Reels</span></div>
+      <div class="stat"><b>+100 mil</b><span>seguidores em menos de 30 dias em perfis novos</span></div>
+      <div class="stat dark"><b>R$ 0</b><span>investidos em anúncio para crescer esses perfis</span></div>
+    </div>
+    <p class="note">Trabalho autônomo de dezembro de 2023 a janeiro de 2025, com monetização por produtos digitais.</p>
+  </div>
+</section>
+
+<section class="sec" id="como-trabalho" style="padding-top:0">
+  <div class="wrap">
+    <div class="cols"><div class="label">Processo</div><div><h2 class="h2">Como eu trabalho</h2><p class="muted" style="margin-top:14px;max-width:60ch">Do planejamento do mês ao relatório de resultado, com o time de criação recebendo briefings claros e o cliente sabendo o porquê de cada post.</p></div></div>
+    <div class="steps">
+      <div class="step"><span class="n">01</span><h3>Diagnóstico</h3><p>Leitura do perfil, do público e dos concorrentes. Defino os pilares de conteúdo e o que a conta precisa gerar: alcance, autoridade ou conversão.</p></div>
+      <div class="step"><span class="n">02</span><h3>Calendário editorial</h3><p>Cronograma mensal com datas, formatos (estático, carrossel, Reels) e pilares equilibrados, entregue dentro do prazo e aprovado com o cliente.</p></div>
+      <div class="step"><span class="n">03</span><h3>Copy</h3><p>Gancho nos primeiros segundos, uma ideia por post e chamada para ação clara. Adapto o tom a cada nicho, inclusive os mais técnicos, como saúde e direito.</p></div>
+      <div class="step"><span class="n">04</span><h3>Briefing e revisão</h3><p>Briefing com objetivo, referências e texto final para design e vídeo, e revisão das peças antes de publicar para garantir o padrão.</p></div>
+      <div class="step"><span class="n">05</span><h3>Agendamento</h3><p>Posts agendados e acompanhados, com o quadro de tarefas sempre atualizado para o time saber o que está em produção, em revisão e no ar.</p></div>
+      <div class="step"><span class="n">06</span><h3>Métricas e ajuste</h3><p>Alcance, retenção dos Reels, salvamentos, compartilhamentos e seguidores por post. O mês seguinte é planejado em cima do que funcionou, não de palpite.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec band" id="calendario">
+  <div class="wrap">
+    <div class="cols"><div class="label" style="color:var(--paper)">Exemplo</div><div><h2 class="h2">Uma semana de calendário</h2><p class="muted" style="margin-top:14px;max-width:62ch">Exemplo ilustrativo de como organizo uma semana para uma clínica odontológica fictícia: cada post tem pilar, formato e objetivo.</p><span class="flag">Exemplo ilustrativo</span></div></div>
+    <div class="cal-wrap">
+      <div class="cal">
+        <div class="day"><span class="d">Segunda</span><span class="fmt c">Carrossel</span><b>5 sinais de que você precisa de uma limpeza agora</b><small>Pilar: educação · Objetivo: salvamentos</small></div>
+        <div class="day"><span class="d">Terça</span><span class="fmt r">Reels</span><b>Bastidores: como é uma consulta do começo ao fim</b><small>Pilar: confiança · Objetivo: alcance</small></div>
+        <div class="day"><span class="d">Quarta</span><span class="fmt">Estático</span><b>Mito ou verdade: clareamento enfraquece o dente?</b><small>Pilar: educação · Objetivo: comentários</small></div>
+        <div class="day"><span class="d">Quinta</span><span class="fmt r">Reels</span><b>Antes e depois de um tratamento, explicado pelo dentista</b><small>Pilar: prova · Objetivo: compartilhamentos</small></div>
+        <div class="day"><span class="d">Sexta</span><span class="fmt c">Carrossel</span><b>Como agendar sua avaliação em 2 minutos</b><small>Pilar: conversão · Objetivo: mensagens</small></div>
+      </div>
+    </div>
+    <div class="pillars"><span>Educação 40%</span><span>Confiança e bastidores 25%</span><span>Prova e resultados 20%</span><span>Conversão 15%</span></div>
+  </div>
+</section>
+
+<section class="sec" id="copy">
+  <div class="wrap">
+    <div class="cols"><div class="label">Copy</div><div><h2 class="h2">A mesma ideia, escrita para ser lida</h2><p class="muted" style="margin-top:14px;max-width:60ch">Exemplo ilustrativo de como reescrevo uma legenda: o assunto é o mesmo, o que muda é o gancho, a clareza e o próximo passo.</p></div></div>
+    <div class="ba">
+      <article><span class="k">Antes</span><p class="post">Nossa clínica oferece clareamento dental com tecnologia de ponta e profissionais qualificados. Venha conhecer! #odontologia #sorriso</p><p class="why">Fala da clínica, não do paciente. Não tem gancho, nem motivo para parar de rolar, nem um passo concreto.</p></article>
+      <article class="good"><span class="k">Depois</span><p class="post">Clareamento enfraquece o dente? 🦷
+Não, quando é feito com avaliação antes.
+O que causa sensibilidade é fazer sem acompanhamento.
+Salve este post e mande para quem está pensando em clarear.
+Avaliação pelo link da bio.</p><p class="why">Abre com a dúvida real do público, responde em uma linha, gera salvamento e compartilhamento e termina com uma ação simples.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="metricas" style="padding-top:0">
+  <div class="wrap">
+    <div class="cols"><div class="label">Métricas</div><div><h2 class="h2">Número antes de opinião</h2><p class="muted" style="margin-top:14px;max-width:62ch">Trabalhei um ano como analista de mídia paga. Isso me deu o hábito de conferir o dado na fonte antes de levar qualquer conclusão para o cliente.</p></div></div>
+    <div class="mgrid">
+      <article><h3>Relatórios mensais</h3><p>Resumo do mês com o que cresceu, o que caiu e o que muda no próximo calendário, em linguagem que o cliente entende.</p></article>
+      <article><h3>Conteúdo + tráfego pago</h3><p>Sei quando um post orgânico merece virar anúncio e como o conteúdo ajuda a baixar o custo de aquisição. Certificado pela Meta em planejamento de mídia.</p></article>
+      <article><h3>Leitura de formato</h3><p>Retenção nos primeiros segundos do Reels, salvamentos no carrossel e comentários no estático: cada formato tem o seu termômetro.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="experiencia" style="padding-top:0">
+  <div class="wrap">
+    <div class="cols"><div class="label">Experiência</div><h2 class="h2">Trajetória</h2></div>
+    <div class="xp">
+      <div class="xp-row"><span class="yr">dez 2023 – jan 2025</span><div><h3>Growth orgânico e tráfego pago</h3><div class="org">Autônomo</div></div><p>Criação e crescimento de perfis no Instagram do zero, estratégia de alcance, retenção e viralização, Reels e monetização por produtos digitais. Meta Ads com orçamento baixo, otimizado por CTR, CPC, CPA e ROAS.</p></div>
+      <div class="xp-row"><span class="yr">ago 2025 – ago 2026</span><div><h3>Analista de mídia</h3><div class="org">Agência IDK Brasil · remoto</div></div><p>Planejamento e operação de campanhas em Meta Ads, Google Ads e LinkedIn Ads para uma carteira de marcas, com relatórios mensais e auditoria de conta.</p></div>
+      <div class="xp-row"><span class="yr">set 2026</span><div><h3>Desenvolvedor front-end</h3><div class="org">Agência IDK Brasil · remoto</div></div><p>Recursos de conversão em lojas virtuais e e-mails de campanha. Inclui o site de uma consultoria de aulas de medicina, um nicho em que já escrevi para o público.</p></div>
+      <div class="xp-row"><span class="yr">Certificações</span><div><h3>Meta e Google</h3><div class="org">2025</div></div><p>Meta Certified Media Planning Professional e cinco certificações do Google Ads (Pesquisa, Display, Vídeo, Shopping e Apps).</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="contact-wrap" id="contato">
+  <section class="contact">
+    <div class="label" style="color:var(--paper-2)">Contato</div>
+    <h2 style="margin-top:16px">Vamos fazer o seu perfil crescer? <span class="dim">Me chama.</span></h2>
+    <div class="clist">
+      <div><small>E-mail</small><span>juniorabrt@gmail.com</span></div>
+      <div><small>WhatsApp</small><a href="https://wa.me/5588981195074" target="_blank" rel="noopener">+55 (88) 98119-5074</a></div>
+      <div><small>LinkedIn</small><a href="https://www.linkedin.com/in/lourivalabrantes/" target="_blank" rel="noopener">/in/lourivalabrantes</a></div>
+    </div>
+    <div class="foot"><span>© 2026 Lourival Junior Abrantes · Fortaleza, CE</span><a href="/">Ver portfólio de desenvolvimento →</a></div>
+  </section>
+</div>
+
+</body>
+</html>
