@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 144" role="img" aria-label="StudyOS">
+  <path d="M23,84 L31,72 L31,110 L23,110 Z" fill="#8b5cf6"/>
+  <path d="M97,84 L89,72 L89,110 L97,110 Z" fill="#8b5cf6"/>
+  <path d="M37,56 L47,44 L47,116 L37,116 Z" fill="#a78bfa"/>
+  <path d="M83,56 L73,44 L73,116 L83,116 Z" fill="#a78bfa"/>
+  <path d="M60,6 L69,30 L69,116 L60,138 L51,116 L51,30 Z" fill="#8b5cf6"/>
+  <rect x="51" y="45" width="18" height="3.4" fill="#4c2f9e"/>
+</svg>
