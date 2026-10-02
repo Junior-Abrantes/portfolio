@@ -908,7 +908,7 @@ let docked = false, natW = 0;
 function measurePill(){ pill.style.width='auto'; pill.style.justifyContent='flex-start'; natW = pill.offsetWidth; pill.style.justifyContent=''; pill.style.width=''; }
 function morph(){
   if(!natW) measurePill();
-  const p = reduce ? 1 : Math.min(1, Math.max(0, scrollY / 160));
+  const p = Math.min(1, Math.max(0, scrollY / 160));
   const e = p<.5 ? 2*p*p : 1-Math.pow(-2*p+2,2)/2;
   const wide = Math.max(natW, Math.min(innerWidth*0.56, 880));
   pill.style.setProperty('--pw', (wide + (natW - wide)*e) + 'px');
