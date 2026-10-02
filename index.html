@@ -265,7 +265,7 @@ dialog.proj::backdrop{transition:opacity .4s}
 .vis.dark .mono-vis{color:#fff}.vis.dark .mono-vis small{color:#a3a3a3}
 
 /* dialog */
-dialog.proj{width:min(780px,calc(100% - 24px));max-height:calc(100% - 32px);background:var(--card);color:var(--ink);border:0;border-radius:var(--r-lg);padding:0;overflow:auto}
+dialog.proj{width:min(780px,calc(100% - 24px));max-height:calc(100% - 32px);overscroll-behavior:contain;-webkit-overflow-scrolling:touch;background:var(--card);color:var(--ink);border:0;border-radius:var(--r-lg);padding:0;overflow:auto}
 dialog.proj[open]{animation:pop .5s var(--ease)}
 @keyframes pop{from{transform:translateY(30px) scale(.98);opacity:0}}
 dialog.proj::backdrop{background:rgba(10,10,10,.55);backdrop-filter:blur(6px)}
@@ -502,7 +502,7 @@ form.msg .note{font-size:13.5px;color:var(--paper-2)}
     <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false"><span></span></button>
   </div>
 </header>
-<div class="msheet" id="sheet" hidden>
+<div class="msheet" id="sheet" hidden data-lenis-prevent>
   <button class="close" id="sheetClose" aria-label="Fechar menu">×</button>
   <a href="#projetos">Projetos</a><a href="#sobre">Sobre</a><a href="#servicos">Serviços</a><a href="#skills">Skills</a><a href="#marcas">Marcas</a><a href="#recomendacoes">Recomendações</a><a href="#contato">Contato</a>
 </div>
@@ -683,7 +683,7 @@ form.msg .note{font-size:13.5px;color:var(--paper-2)}
 </main>
 
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
-<dialog class="proj" id="dlg" aria-labelledby="dlgTitle"><div class="dlg" id="dlgBody"></div></dialog>
+<dialog class="proj" id="dlg" aria-labelledby="dlgTitle" data-lenis-prevent><div class="dlg" id="dlgBody"></div></dialog>
 
 <script>
 const A = {"betania": "/img/marcas/betania.png", "dermacyd": "/img/marcas/dermacyd.png", "utrax": "/img/marcas/utrax.png", "syngenta": "/img/marcas/syngenta.png", "taodeo": "/img/marcas/taodeo.png", "victor-hugo": "/img/marcas/victor-hugo.png", "novvo": "/img/marcas/novvo.png", "smartfit": "/img/marcas/smartfit.png", "midway": "/img/marcas/midway.svg", "p-achou": "/img/logos/achou.svg", "p-studyos": "/img/logos/studyos.svg", "p-food-health": "/img/logos/food-health.svg", "gui.jpg": "/img/gui.jpg", "quesia.jpg": "/img/quesia.jpg"};
