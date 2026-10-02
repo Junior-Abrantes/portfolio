@@ -120,10 +120,18 @@ dialog.proj::backdrop{transition:opacity .4s}
 .roll > span{display:block;transition:transform .55s var(--ease)}
 .roll > span::after{content:attr(data-t);display:block}
 .btn:hover .roll > span,.btn:focus-visible .roll > span{transform:translateY(-1.3em)}
-.btn .arr{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:currentColor;margin-right:-12px;transition:transform .55s var(--ease)}
-.btn .arr svg{width:12px;height:12px}
-.btn.dark .arr svg{stroke:var(--ink)} .btn.light .arr svg{stroke:var(--paper)}
-.btn:hover .arr{transform:rotate(-45deg)}
+.btn .arr{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:currentColor;margin-right:-14px;flex-shrink:0}
+.btn.dark .arr{color:var(--paper)} .btn.dark .arr .ico{color:var(--ink)}
+.btn.light .arr{color:var(--ink)} .btn.light .arr .ico{color:var(--paper)}
+.btn.ghost .arr{background:var(--paper)} .btn.ghost .arr .ico{color:var(--ink)}
+/* arrow icon: two stacked arrows that swap on hover */
+.ico{position:relative;display:grid;place-items:center;overflow:hidden;width:16px;height:16px}
+.ico svg{grid-area:1/1;width:100%;height:100%;transition:transform .55s var(--ease)}
+.ico-d svg+svg{transform:translate(-130%,130%)}
+.ico-r svg+svg{transform:translateX(-130%)}
+.btn:hover .ico-d svg:first-child,.fcard:hover .ico-d svg:first-child,.prow:hover .ico-d svg:first-child,.clist div:hover .ico-d svg:first-child,a:hover > .ico-d svg:first-child{transform:translate(130%,-130%)}
+.btn:hover .ico-r svg:first-child{transform:translateX(130%)}
+.btn:hover .ico svg+svg,.fcard:hover .ico svg+svg,.prow:hover .ico svg+svg,.clist div:hover .ico svg+svg{transform:none}
 
 /* ---------- hero (minimal, Cattleya-style) ---------- */
 .hero{padding:12px}
@@ -185,7 +193,7 @@ dialog.proj::backdrop{transition:opacity .4s}
 .fcard .vis.dark{background:radial-gradient(120% 100% at 30% 0%,#2a2a2a,#0a0a0a)}
 .fcard .vis .go{position:absolute;right:16px;bottom:16px;transform:none;width:52px;height:52px;border-radius:50%;background:var(--paper);display:grid;place-items:center;opacity:0;translate:0 10px;transition:opacity .4s,translate .5s var(--ease)}
 .fcard:hover .vis .go{opacity:1;translate:0 0}
-.fcard .vis .go svg{width:18px;height:18px}
+.fcard .vis .go .ico{width:20px;height:20px;color:var(--ink)}
 .fcard p{font-size:15px;color:var(--ink-2);padding:0 10px 8px;max-width:60ch}
 
 /* project list */
@@ -204,7 +212,7 @@ dialog.proj::backdrop{transition:opacity .4s}
 .prow .y{font-size:14px;color:var(--ink-2);font-variant-numeric:tabular-nums}
 .prow .a{width:36px;height:36px;border-radius:50%;background:var(--ink);display:grid;place-items:center;transform:scale(.6);opacity:0;transition:transform .45s var(--ease),opacity .3s}
 .prow:hover .a{transform:scale(1);opacity:1}
-.prow .a svg{width:13px;height:13px;stroke:var(--paper)}
+.prow .a .ico{width:15px;height:15px;color:var(--paper)}
 @media (max-width:760px){.prow{grid-template-columns:40px 1fr 36px}.prow .c,.prow .y{display:none}.prow .a{opacity:1;transform:scale(.85)}}
 
 /* mock-ups (monochrome) */
@@ -434,7 +442,7 @@ dialog.proj::backdrop{background:rgba(10,10,10,.55);backdrop-filter:blur(6px)}
 .clist .val,.clist a{font-family:var(--display);font-size:clamp(18px,1.8vw,24px);font-weight:500;letter-spacing:-.02em;text-decoration:none;overflow-wrap:anywhere;user-select:all}
 .clist button{font:inherit;font-size:13px;font-weight:500;border:0;border-radius:999px;background:var(--paper);color:var(--ink);padding:8px 14px;cursor:pointer;flex-shrink:0}
 .clist .ext{width:38px;height:38px;border-radius:50%;background:var(--paper);display:grid;place-items:center;flex-shrink:0}
-.clist .ext svg{width:13px;height:13px;stroke:var(--ink)}
+.clist .ext .ico{width:16px;height:16px;color:var(--ink)}
 form.msg{display:flex;flex-direction:column;gap:12px}
 form.msg label{display:block}
 form.msg label span{display:block;font-size:13px;color:var(--paper-2);margin-bottom:6px}
@@ -508,7 +516,7 @@ form.msg .note{font-size:13.5px;color:var(--paper-2)}
       <p class="who">Junior Abrantes, <span>desenvolvedor front-end</span></p>
       <p class="lede">Componentes de CRO para e-commerce, testes A/B e aplicações em React e TypeScript, instrumentados com GA4, GTM e BigQuery.</p>
       <div class="hero-acts">
-        <a class="btn light" href="#projetos"><span class="roll"><span data-t="Ver projetos">Ver projetos</span></span><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a class="btn light" href="#projetos"><span class="roll"><span data-t="Ver projetos">Ver projetos</span></span><span class="arr"><span class="ico ico-r"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="M13 5l7 7-7 7"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="M13 5l7 7-7 7"/></svg></span></span></a>
         <a class="btn ghost" href="#contato"><span class="roll"><span data-t="Falar comigo">Falar comigo</span></span></a>
       </div>
       <div class="socials">
@@ -610,7 +618,7 @@ form.msg .note{font-size:13.5px;color:var(--paper-2)}
         <div class="bottom">
           <div class="faces"><img src="/img/gui.jpg" alt=""><img src="/img/quesia.jpg" alt=""><b>2</b></div>
           <div class="src"><span class="li"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></span>Publicadas no meu perfil do LinkedIn</div>
-          <a class="btn dark" href="https://www.linkedin.com/in/lourivalabrantes/details/recommendations/" target="_blank" rel="noopener" style="align-self:flex-start"><span class="roll"><span data-t="Conferir no LinkedIn">Conferir no LinkedIn</span></span><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a>
+          <a class="btn dark" href="https://www.linkedin.com/in/lourivalabrantes/details/recommendations/" target="_blank" rel="noopener" style="align-self:flex-start"><span class="roll"><span data-t="Conferir no LinkedIn">Conferir no LinkedIn</span></span><span class="arr"><span class="ico ico-d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6"/><path d="M8 6h10v10"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6"/><path d="M8 6h10v10"/></svg></span></span></a>
         </div>
       </div>
     </div>
@@ -654,14 +662,14 @@ form.msg .note{font-size:13.5px;color:var(--paper-2)}
       <div class="clist">
         <div><span><small>E-mail</small><span class="val" id="email">juniorabrt@gmail.com</span></span><button type="button" data-copy="email">Copiar</button></div>
         <div><span><small>Telefone / WhatsApp</small><span class="val" id="phone">+55 (88) 98119-5074</span></span><button type="button" data-copy="phone">Copiar</button></div>
-        <div><span><small>LinkedIn</small><a href="https://www.linkedin.com/in/lourivalabrantes/" target="_blank" rel="noopener">/in/lourivalabrantes</a></span><span class="ext"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
-        <div><span><small>GitHub</small><a href="https://github.com/Junior-Abrantes" target="_blank" rel="noopener">/Junior-Abrantes</a></span><span class="ext"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        <div><span><small>LinkedIn</small><a href="https://www.linkedin.com/in/lourivalabrantes/" target="_blank" rel="noopener">/in/lourivalabrantes</a></span><span class="ext"><span class="ico ico-d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6"/><path d="M8 6h10v10"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6"/><path d="M8 6h10v10"/></svg></span></span></div>
+        <div><span><small>GitHub</small><a href="https://github.com/Junior-Abrantes" target="_blank" rel="noopener">/Junior-Abrantes</a></span><span class="ext"><span class="ico ico-d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6"/><path d="M8 6h10v10"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6"/><path d="M8 6h10v10"/></svg></span></span></div>
       </div>
       <form class="msg" id="msgForm" novalidate>
         <label for="f-name"><span>Nome</span><input id="f-name" name="name" autocomplete="name" required></label>
         <label for="f-mail"><span>Seu e-mail</span><input id="f-mail" name="email" type="email" autocomplete="email" required></label>
         <label for="f-text"><span>Mensagem</span><textarea id="f-text" name="text" required placeholder="Conte sobre a vaga ou o projeto"></textarea></label>
-        <button class="btn light" type="submit" style="align-self:flex-start"><span class="roll"><span data-t="Copiar e abrir e-mail">Copiar e abrir e-mail</span></span><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+        <button class="btn light" type="submit" style="align-self:flex-start"><span class="roll"><span data-t="Copiar e abrir e-mail">Copiar e abrir e-mail</span></span><span class="arr"><span class="ico ico-r"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="M13 5l7 7-7 7"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="M13 5l7 7-7 7"/></svg></span></span></button>
         <p class="note" id="formNote">A mensagem é copiada para você colar no e-mail para juniorabrt@gmail.com.</p>
       </form>
     </div>
@@ -693,7 +701,7 @@ document.addEventListener('click', e=>{
   const hash = a.getAttribute('href'); if(hash.length < 2) return;
   e.preventDefault(); goTo(hash);
 });
-const ARR = '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke="currentColor"><path d="M7 17L17 7M9 7h8v8"/></svg>';
+const ARR = '<span class="ico ico-d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6"/><path d="M8 6h10v10"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6"/><path d="M8 6h10v10"/></svg></span>';
 
 const M = {
   frete:`<div class="m m-page"><div class="m-top"><span>Faltam <b>R$ 89,90</b> para o frete grátis</span><div class="m-prog"><i></i></div></div><div class="m-nav">VICTOR HUGO<u><s></s><s></s></u></div><div class="m-row"><div class="m-prod"></div><div class="m-prod"></div><div class="m-prod"></div></div></div>`,
@@ -861,7 +869,7 @@ function openP(i){
     <h4>Destaques técnicos</h4><ul>${p.h.map(x=>`<li>${x}</li>`).join('')}</ul>
     ${p.r?`<h4>Resultado</h4><p style="font-size:16px">${p.r}</p>`:''}
     <h4>Stack</h4><div class="chips">${p.s.map(x=>`<span>${x}</span>`).join('')}</div>
-    ${p.url?`<div class="acts"><a class="btn dark" href="${p.url}" target="_blank" rel="noopener"><span class="roll"><span data-t="Abrir projeto ↗">Abrir projeto ↗</span></span></a></div>`:''}`;
+    ${p.url?`<div class="acts"><a class="btn dark" href="${p.url}" target="_blank" rel="noopener"><span class="roll"><span data-t="Abrir projeto">Abrir projeto</span></span><span class="arr">${ARR}</span></a></div>`:''}`;
   dlg.classList.remove('closing');
   if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open','');
   lenis && lenis.stop();
@@ -925,7 +933,7 @@ document.getElementById('brands').innerHTML = B.map(([k,n,c,d,u],i)=>`
       <span class="mid"><span class="nm">${n}</span><span class="cat">${c}</span></span>
       <span class="pm" aria-hidden="true"></span>
     </button>
-    <div class="pane" id="br${i}"><div><div class="in"><span class="sp"></span><div class="txt"><p>${d}</p>${u?`<a class="btn dark" style="align-self:flex-start;height:42px" href="${u}" target="_blank" rel="noopener"><span class="roll"><span data-t="Acessar site ↗">Acessar site ↗</span></span></a>`:''}</div></div></div></div>
+    <div class="pane" id="br${i}"><div><div class="in"><span class="sp"></span><div class="txt"><p>${d}</p>${u?`<a class="btn dark" style="align-self:flex-start;height:42px" href="${u}" target="_blank" rel="noopener"><span class="roll"><span data-t="Acessar site">Acessar site</span></span><span class="arr">${ARR}</span></a>`:''}</div></div></div></div>
   </div>`).join('');
 accordion(document.getElementById('brands'), '.brand-row');
 const mq = B.map(([k])=>`<img src="${A[k]}" alt="" >`).join('');
